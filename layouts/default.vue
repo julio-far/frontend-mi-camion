@@ -57,7 +57,7 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-main class="absolute ">
+    <v-main>
       <v-container>
         <Nuxt />
       </v-container>
@@ -93,7 +93,7 @@ export default {
   data () {
     return {
       clipped: false,
-      drawer: false,
+      drawer: true,
       fixed: false,
       items: [
         {
@@ -105,6 +105,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-account-tie',
+          title: 'Piloto',
+          to: '/piloto'
         }
       ],
       miniVariant: false,
