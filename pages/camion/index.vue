@@ -2,19 +2,19 @@
   <v-row justify="center" align="center">
     <v-col class="d-flex justify-space-between" cols="12" sm="12" md="12">
       <h1 class="h1">Pilotos</h1>
-      <v-btn to="/piloto/create" color="primary">Crear</v-btn>
+      <v-btn to="/camion/create" color="primary">Crear</v-btn>
     </v-col>
     <vCol>
       <vDataTable
         :headers="[
           { text: 'Id', value: 'id' },
-          { text: 'Nombre', value: 'nombre' },
-          { text: 'DPI', value: 'dpi' },
-          { text: 'Licencia', value: 'licencia' },
-          { text: 'Teléfono', value: 'telefono' },
+          { text: 'Modelo', value: 'modelo' },
+          { text: 'Marca', value: 'marca' },
+          { text: 'Placa', value: 'placa' },
+          { text: 'Kilometraje', value: 'kilometraje' },
           { text: 'Acciones', value: 'actions', sortable: false }
         ]"
-        :items="pilotos"
+        :items="vehiculos"
         :items-per-page="5"
       >
         <template #[`item.actions`]="{ item }">
@@ -24,13 +24,13 @@
                 rounded
                 small
                 v-bind="attrs"
-                :to="{ name: 'piloto-id', params: { id: item.id } }"
+                :to="{ name: 'camion-id', params: { id: item.id } }"
                 v-on="on"
               >
                 <vIcon small class="mr-2"> mdi-pencil </vIcon>
               </vBtn>
             </template>
-            <span>Modificar cita</span>
+            <span>Modificar camion</span>
           </vTooltip>
         </template>
       </vDataTable>
@@ -40,13 +40,13 @@
 <script>
 export default {
   async asyncData({ $axios }) {
-    const { pilotos } = await $axios.$get('/piloto')
+    const { vehiculos } = await $axios.$get('/vehiculo')
 
-    return { pilotos }
+    return { vehiculos }
   },
   data() {
     return {
-      pilotos: [],
+      vehiculos: [],
     }
   },
   methods: {},

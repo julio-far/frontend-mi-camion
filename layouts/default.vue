@@ -102,14 +102,14 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        },
-        {
           icon: 'mdi-account-tie',
           title: 'Piloto',
           to: '/piloto'
+        },
+        {
+          icon: 'mdi-tanker-truck',
+          title: 'Camion',
+          to: '/camion'
         }
       ],
       miniVariant: false,
